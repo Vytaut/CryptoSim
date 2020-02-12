@@ -21,4 +21,4 @@ class Block:
                    type(self.data) == 'str' and \
                    type(self.prevhash) == 'hex' and \
                    type(self.hash) == 'hex'
-        return True
+        return True #TODO: figure out a way to see if this is genesis block (eg. no prevhash)
