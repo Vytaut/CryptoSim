@@ -2,7 +2,7 @@ import hashlib
 
 class Block:
 
-    def __init__(self,index,timestamp,data,prevhash):
+    def __init__(self,index: int,timestamp: float,data: str,prevhash: hex):
         self.index = index
         self.timestamp = timestamp
         self.data = data
@@ -11,6 +11,6 @@ class Block:
 
     def calculateHash(self):
         hash = str(self.index) + str(self.timestamp) + str(self.data) + str(self.prevhash)
-        return hashlib.sha256(hash.encode())
+        return hashlib.sha256(hash.encode()).hexdigest()
 
 #TODO: genesis block

@@ -10,7 +10,7 @@ class BlockChain:
     def generateGenesisBlock(self):
         return bl.Block(0, time.time(), None, None)
 
-    def generateNextBlock(self, blockdata):
+    def generateNextBlock(self, blockdata: str):
         prevblock = self.getLastBlock()
         index = prevblock.index + 1
         prevhash = prevblock.calculateHash()
@@ -19,7 +19,7 @@ class BlockChain:
     def getLastBlock(self):
         return self.blockChain[-1]
 
-    def validateBlock(self, prevblock, nextblock):
+    def validateBlock(self, prevblock: bl.Block, nextblock: bl.Block):
         if prevblock.index + 1 != nextblock.index:
             print('Invalid block index!')
             return False
