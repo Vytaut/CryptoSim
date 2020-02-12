@@ -5,7 +5,7 @@ import Block as bl
 
 class BlockChain:
     def __init__(self):
-        self.blockChain = [self.generateGenesisBlock()]
+        self.blockChain: [bl.Block] = [self.generateGenesisBlock()]
 
     def generateGenesisBlock(self):
         return bl.Block(0, time.time(), None, None)
@@ -19,7 +19,7 @@ class BlockChain:
     def getLastBlock(self):
         return self.blockChain[-1]
 
-    def validateBlock(self, prevblock: bl.Block, nextblock: bl.Block):
+    def validateBlockSeq(self, prevblock: bl.Block, nextblock: bl.Block):
         if prevblock.index + 1 != nextblock.index:
             print('Invalid block index!')
             return False

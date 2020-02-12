@@ -1,5 +1,6 @@
 import hashlib
 
+
 class Block:
 
     def __init__(self,index: int,timestamp: float,data: str,prevhash: hex):
@@ -13,4 +14,11 @@ class Block:
         hash = str(self.index) + str(self.timestamp) + str(self.data) + str(self.prevhash)
         return hashlib.sha256(hash.encode()).hexdigest()
 
-#TODO: genesis block
+    def validateBlock(self):
+        if self.index != 0:
+            return type(self.index) == 'int' and \
+                   type(self.timestamp) == 'float' and \
+                   type(self.data) == 'str' and \
+                   type(self.prevhash) == 'hex' and \
+                   type(self.hash) == 'hex'
+        return True
