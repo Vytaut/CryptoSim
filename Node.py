@@ -2,7 +2,7 @@ import Blockchain as bc
 import Block as bl
 
 
-class Crypto:
+class Node:
 
     def __init__(self, chain: bc.BlockChain):
         self.chain = chain
