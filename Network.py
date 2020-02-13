@@ -1,4 +1,5 @@
 import Node as nd
+import Block as bl
 
 
 class Network:
@@ -7,3 +8,9 @@ class Network:
         self.index = index
         self.name = name
         self.nodes = nodes
+        self.publicblocks: [bl.Block] = []
+
+    def addNode(self, node: nd.Node):
+        self.nodes.append(node)
+
+
